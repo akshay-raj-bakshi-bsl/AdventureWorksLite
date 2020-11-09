@@ -1,9 +1,3 @@
-CREATE DATABASE AdventureWorksLT
-GO
-
-USE AdventureWorksLT
-GO
-
 CREATE SCHEMA SalesLT
 GO
 
