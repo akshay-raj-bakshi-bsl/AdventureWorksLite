@@ -1,0 +1,29 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+- task: SqlAzureDacpacDeployment@1
+  inputs:
+    azureSubscription: 'BrainScale Enterprise(7e2c5160-d90e-4b29-bf48-19392d500f88)'
+    AuthenticationType: 'server'
+    ServerName: 'tcw-sql.database.windows.net'
+    DatabaseName: 'tcw-sql'
+    SqlUsername: 'vas'
+    SqlPassword: 'demo@pass123'
+    deployType: 'SqlTask'
+    IpDetectionMethod: 'AutoDetect'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
