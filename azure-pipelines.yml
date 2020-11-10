@@ -14,7 +14,9 @@ steps:
   displayName: 'Run a one-line script'
 - task: CopyFiles@2
   inputs:
-    Contents: '*.csv, *.sql'
+    Contents: |
+      *.csv
+      *.sql
     TargetFolder: '$(build.artifactstagingdirectory)'
 
 - script: |
