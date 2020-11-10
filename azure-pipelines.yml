@@ -27,7 +27,7 @@ steps:
     SqlUsername: 'vas'
     SqlPassword: 'demo@pass123'
     deployType: 'SqlTask'
-    SqlFile: '$(build.artifactstagingdirectory)/script.sql'
+    SqlFile: '$(build.artifactstagingdirectory)/*.sql'
     IpDetectionMethod: 'AutoDetect'
 
 - script: |
