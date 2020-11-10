@@ -1,3 +1,110 @@
+ALTER TABLE [SalesLT].[SalesOrderHeader] DROP CONSTRAINT [FK_SalesOrderHeader_Customer_CustomerID]
+GO
+ALTER TABLE [SalesLT].[SalesOrderHeader] DROP CONSTRAINT [FK_SalesOrderHeader_Address_ShipTo_AddressID]
+GO
+ALTER TABLE [SalesLT].[SalesOrderHeader] DROP CONSTRAINT [FK_SalesOrderHeader_Address_BillTo_AddressID]
+GO
+ALTER TABLE [SalesLT].[SalesOrderDetail] DROP CONSTRAINT [FK_SalesOrderDetail_SalesOrderHeader_SalesOrderID]
+GO
+ALTER TABLE [SalesLT].[SalesOrderDetail] DROP CONSTRAINT [FK_SalesOrderDetail_Product_ProductID]
+GO
+ALTER TABLE [SalesLT].[ProductModelProductDescription] DROP CONSTRAINT [FK_ProductModelProductDescription_ProductModel_ProductModelID]
+GO
+ALTER TABLE [SalesLT].[ProductModelProductDescription] DROP CONSTRAINT [FK_ProductModelProductDescription_ProductDescription_ProductDescriptionID]
+GO
+ALTER TABLE [SalesLT].[ProductCategory] DROP CONSTRAINT [FK_ProductCategory_ProductCategory_ParentProductCategoryID_ProductCategoryID]
+GO
+ALTER TABLE [SalesLT].[Product] DROP CONSTRAINT [FK_Product_ProductModel_ProductModelID]
+GO
+ALTER TABLE [SalesLT].[Product] DROP CONSTRAINT [FK_Product_ProductCategory_ProductCategoryID]
+GO
+ALTER TABLE [SalesLT].[CustomerAddress] DROP CONSTRAINT [FK_CustomerAddress_Customer_CustomerID]
+GO
+ALTER TABLE [SalesLT].[CustomerAddress] DROP CONSTRAINT [FK_CustomerAddress_Address_AddressID]
+GO
+/****** Object:  Table [SalesLT].[SalesOrderHeader]    Script Date: 11/10/2020 2:55:22 AM ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[SalesLT].[SalesOrderHeader]') AND type in (N'U'))
+DROP TABLE [SalesLT].[SalesOrderHeader]
+GO
+/****** Object:  Table [SalesLT].[SalesOrderDetail]    Script Date: 11/10/2020 2:55:22 AM ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[SalesLT].[SalesOrderDetail]') AND type in (N'U'))
+DROP TABLE [SalesLT].[SalesOrderDetail]
+GO
+/****** Object:  Table [SalesLT].[CustomerAddress]    Script Date: 11/10/2020 2:55:22 AM ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[SalesLT].[CustomerAddress]') AND type in (N'U'))
+DROP TABLE [SalesLT].[CustomerAddress]
+GO
+/****** Object:  Table [SalesLT].[Address]    Script Date: 11/10/2020 2:55:22 AM ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[SalesLT].[Address]') AND type in (N'U'))
+DROP TABLE [SalesLT].[Address]
+GO
+/****** Object:  View [SalesLT].[vProductModelCatalogDescription]    Script Date: 11/10/2020 2:55:22 AM ******/
+DROP VIEW [SalesLT].[vProductModelCatalogDescription]
+GO
+/****** Object:  View [SalesLT].[vProductAndDescription]    Script Date: 11/10/2020 2:55:22 AM ******/
+DROP VIEW [SalesLT].[vProductAndDescription]
+GO
+/****** Object:  Table [SalesLT].[ProductModelProductDescription]    Script Date: 11/10/2020 2:55:22 AM ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[SalesLT].[ProductModelProductDescription]') AND type in (N'U'))
+DROP TABLE [SalesLT].[ProductModelProductDescription]
+GO
+/****** Object:  Table [SalesLT].[ProductModel]    Script Date: 11/10/2020 2:55:22 AM ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[SalesLT].[ProductModel]') AND type in (N'U'))
+DROP TABLE [SalesLT].[ProductModel]
+GO
+/****** Object:  Table [SalesLT].[ProductDescription]    Script Date: 11/10/2020 2:55:23 AM ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[SalesLT].[ProductDescription]') AND type in (N'U'))
+DROP TABLE [SalesLT].[ProductDescription]
+GO
+/****** Object:  Table [SalesLT].[Product]    Script Date: 11/10/2020 2:55:23 AM ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[SalesLT].[Product]') AND type in (N'U'))
+DROP TABLE [SalesLT].[Product]
+GO
+/****** Object:  View [SalesLT].[vGetAllCategories]    Script Date: 11/10/2020 2:55:23 AM ******/
+DROP VIEW [SalesLT].[vGetAllCategories]
+GO
+/****** Object:  Table [SalesLT].[ProductCategory]    Script Date: 11/10/2020 2:55:23 AM ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[SalesLT].[ProductCategory]') AND type in (N'U'))
+DROP TABLE [SalesLT].[ProductCategory]
+GO
+/****** Object:  UserDefinedFunction [dbo].[ufnGetCustomerInformation]    Script Date: 11/10/2020 2:55:23 AM ******/
+DROP FUNCTION [dbo].[ufnGetCustomerInformation]
+GO
+/****** Object:  Table [SalesLT].[Customer]    Script Date: 11/10/2020 2:55:23 AM ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[SalesLT].[Customer]') AND type in (N'U'))
+DROP TABLE [SalesLT].[Customer]
+GO
+/****** Object:  UserDefinedFunction [dbo].[ufnGetSalesOrderStatusText]    Script Date: 11/10/2020 2:55:23 AM ******/
+DROP FUNCTION [dbo].[ufnGetSalesOrderStatusText]
+GO
+/****** Object:  UserDefinedFunction [dbo].[ufnGetAllCategories]    Script Date: 11/10/2020 2:55:23 AM ******/
+DROP FUNCTION [dbo].[ufnGetAllCategories]
+GO
+/****** Object:  UserDefinedDataType [dbo].[Phone]    Script Date: 11/10/2020 2:55:23 AM ******/
+DROP TYPE [dbo].[Phone]
+GO
+/****** Object:  UserDefinedDataType [dbo].[OrderNumber]    Script Date: 11/10/2020 2:55:23 AM ******/
+DROP TYPE [dbo].[OrderNumber]
+GO
+/****** Object:  UserDefinedDataType [dbo].[NameStyle]    Script Date: 11/10/2020 2:55:23 AM ******/
+DROP TYPE [dbo].[NameStyle]
+GO
+/****** Object:  UserDefinedDataType [dbo].[Name]    Script Date: 11/10/2020 2:55:23 AM ******/
+DROP TYPE [dbo].[Name]
+GO
+/****** Object:  UserDefinedDataType [dbo].[Flag]    Script Date: 11/10/2020 2:55:23 AM ******/
+DROP TYPE [dbo].[Flag]
+GO
+/****** Object:  UserDefinedDataType [dbo].[AccountNumber]    Script Date: 11/10/2020 2:55:23 AM ******/
+DROP TYPE [dbo].[AccountNumber]
+GO
+/****** Object:  XmlSchemaCollection [ProductDescriptionSchemaCollection]    Script Date: 11/10/2020 2:55:23 AM ******/
+DROP XML SCHEMA COLLECTION  [SalesLT].[ProductDescriptionSchemaCollection]
+GO
+/****** Object:  Schema [SalesLT]    Script Date: 11/10/2020 2:55:23 AM ******/
+DROP SCHEMA [SalesLT]
+GO
+
 CREATE SCHEMA SalesLT
 GO
 
@@ -763,7 +870,7 @@ GO
 ALTER TABLE [SalesLT].[SalesOrderHeader] CHECK CONSTRAINT [CK_SalesOrderHeader_TaxAmt]
 GO
 
-BULK INSERT [SalesLT].[Address] FROM 'Address.csv'
+BULK INSERT [SalesLT].[Address] FROM '\\Address.csv'
 WITH
 (
 	DATAFILETYPE = 'char',
@@ -772,7 +879,7 @@ WITH
 );
 GO
 
-BULK INSERT [SalesLT].[Customer] FROM 'Customer.csv'
+BULK INSERT [SalesLT].[Customer] FROM '\\Customer.csv'
 WITH
 (
 	DATAFILETYPE = 'char',
@@ -781,7 +888,7 @@ WITH
 );
 GO
 
-BULK INSERT [SalesLT].[CustomerAddress] FROM 'CustomerAddress.csv'
+BULK INSERT [SalesLT].[CustomerAddress] FROM '\\CustomerAddress.csv'
 WITH
 (
 	DATAFILETYPE = 'char',
@@ -790,7 +897,7 @@ WITH
 );
 GO
 
-BULK INSERT [SalesLT].[Product] FROM 'Product.csv'
+BULK INSERT [SalesLT].[Product] FROM '\\Product.csv'
 WITH
 (
 	DATAFILETYPE = 'char',
@@ -800,7 +907,7 @@ WITH
 );
 GO
 
-BULK INSERT [SalesLT].[ProductCategory] FROM 'ProductCategory.csv'
+BULK INSERT [SalesLT].[ProductCategory] FROM '\\ProductCategory.csv'
 WITH
 (
 	DATAFILETYPE = 'char',
@@ -809,7 +916,7 @@ WITH
 );
 GO
 
-BULK INSERT [SalesLT].[ProductDescription] FROM 'ProductDescription.csv'
+BULK INSERT [SalesLT].[ProductDescription] FROM '\\ProductDescription.csv'
 WITH
 (
 	CHECK_CONSTRAINTS,
@@ -822,7 +929,7 @@ WITH
 );
 GO
 
-BULK INSERT [SalesLT].[ProductModel] FROM 'ProductModel.csv'
+BULK INSERT [SalesLT].[ProductModel] FROM '\\ProductModel.csv'
 WITH
 (
 	CODEPAGE='ACP',
@@ -833,7 +940,7 @@ WITH
 );
 GO
 
-BULK INSERT [SalesLT].[ProductModelProductDescription] FROM 'ProductModelProductDescription.csv'
+BULK INSERT [SalesLT].[ProductModelProductDescription] FROM '\\ProductModelProductDescription.csv'
 WITH
 (
 	DATAFILETYPE = 'char',
@@ -842,7 +949,7 @@ WITH
 );
 GO
 
-BULK INSERT [SalesLT].[SalesOrderDetail] FROM 'SalesOrderDetail.csv'
+BULK INSERT [SalesLT].[SalesOrderDetail] FROM '\\SalesOrderDetail.csv'
 WITH
 (
 	DATAFILETYPE = 'char',
@@ -851,7 +958,7 @@ WITH
 );
 GO
 
-BULK INSERT [SalesLT].[SalesOrderHeader] FROM 'SalesOrderHeader.csv'
+BULK INSERT [SalesLT].[SalesOrderHeader] FROM '\\SalesOrderHeader.csv'
 WITH
 (
 	DATAFILETYPE = 'char',
