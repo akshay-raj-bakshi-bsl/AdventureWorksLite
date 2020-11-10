@@ -12,16 +12,10 @@ pool:
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
-- task: SqlAzureDacpacDeployment@1
+- task: CopyFiles@2
   inputs:
-    azureSubscription: 'BrainScale Enterprise(7e2c5160-d90e-4b29-bf48-19392d500f88)'
-    AuthenticationType: 'server'
-    ServerName: 'tcw-sql.database.windows.net'
-    DatabaseName: 'tcw-sql'
-    SqlUsername: 'vas'
-    SqlPassword: 'demo@pass123'
-    deployType: 'SqlTask'
-    IpDetectionMethod: 'AutoDetect'
+    Contents: '*.csv, *.sql'
+    TargetFolder: '$(build.artifactstagingdirectory)'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
