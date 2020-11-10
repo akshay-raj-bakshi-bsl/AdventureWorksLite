@@ -23,11 +23,11 @@ steps:
     azureSubscription: 'BrainScale Enterprise(7e2c5160-d90e-4b29-bf48-19392d500f88)'
     AuthenticationType: 'server'
     ServerName: 'tcw-sql.database.windows.net'
-    DatabaseName: 'tcw-new'
+    DatabaseName: 'tcw-new1'
     SqlUsername: 'vas'
     SqlPassword: 'demo@pass123'
     deployType: 'SqlTask'
-    SqlFile: '$(build.artifactstagingdirectory)\script.sql'
+    SqlFile: 'script.sql'
     IpDetectionMethod: 'AutoDetect'
 
 - script: |
