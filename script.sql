@@ -870,7 +870,7 @@ GO
 ALTER TABLE [SalesLT].[SalesOrderHeader] CHECK CONSTRAINT [CK_SalesOrderHeader_TaxAmt]
 GO
 
-BULK INSERT [SalesLT].[Address] FROM '$(build.artifactstagingdirectory)Address.csv'
+BULK INSERT [SalesLT].[Address] FROM 'D:\a\1\a\Address.csv'
 WITH
 (
 	DATAFILETYPE = 'char',
