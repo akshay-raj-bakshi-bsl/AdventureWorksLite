@@ -870,7 +870,7 @@ GO
 ALTER TABLE [SalesLT].[SalesOrderHeader] CHECK CONSTRAINT [CK_SalesOrderHeader_TaxAmt]
 GO
 
-BULK INSERT [SalesLT].[Address] FROM 'https://github.com/akshay-raj-bakshi-bsl/AdventureWorksLite/blob/master/Address.csv'
+BULK INSERT [SalesLT].[Address] FROM '$(build.artifactstagingdirectory)\Address.csv'
 WITH
 (
 	DATAFILETYPE = 'char',
