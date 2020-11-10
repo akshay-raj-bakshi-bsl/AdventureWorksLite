@@ -23,7 +23,7 @@ steps:
     azureSubscription: 'BrainScale Enterprise(7e2c5160-d90e-4b29-bf48-19392d500f88)'
     AuthenticationType: 'server'
     ServerName: 'tcw-sql.database.windows.net'
-    DatabaseName: 'tcw-sql'
+    DatabaseName: 'tcw-new'
     SqlUsername: 'vas'
     SqlPassword: 'demo@pass123'
     deployType: 'SqlTask'
