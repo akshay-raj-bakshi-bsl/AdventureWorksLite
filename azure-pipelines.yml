@@ -17,6 +17,7 @@ steps:
     Contents: |
       *.csv
       *.sql
+      *.txt
     TargetFolder: '$(build.artifactstagingdirectory)'
 - task: SqlAzureDacpacDeployment@1
   inputs:
