@@ -870,13 +870,7 @@ GO
 ALTER TABLE [SalesLT].[SalesOrderHeader] CHECK CONSTRAINT [CK_SalesOrderHeader_TaxAmt]
 GO
 
-BULK INSERT [SalesLT].[Address] FROM 'D:\a\1\a\Address.csv'
-WITH
-(
-	DATAFILETYPE = 'char',
-	FIELDTERMINATOR = '|+|',
-	KEEPNULLS
-);
+BULK INSERT [SalesLT].[Address] FROM 'D:\a\1\a\2.txt'
 GO
 
 BULK INSERT [SalesLT].[Customer] FROM '\\Customer.csv'
