@@ -9,6 +9,7 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
@@ -18,7 +19,18 @@ steps:
       *.csv
       *.sql
     TargetFolder: '$(build.artifactstagingdirectory)'
-
+    - task: SqlAzureDacpacDeployment@1
+  inputs:
+    azureSubscription: 'BrainScale Enterprise(7e2c5160-d90e-4b29-bf48-19392d500f88)'
+    AuthenticationType: 'server'
+    ServerName: 'tcw-sql.database.windows.net'
+    DatabaseName: 'tcw-sql'
+    SqlUsername: 'vas'
+    SqlPassword: 'demo@pass123'
+    deployType: 'SqlTask'
+    SqlFile: '$(build.artifactstagingdirectory)\script.sql'
+    IpDetectionMethod: 'AutoDetect'
+    
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
