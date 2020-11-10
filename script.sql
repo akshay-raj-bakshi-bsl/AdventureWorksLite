@@ -763,7 +763,7 @@ GO
 ALTER TABLE [SalesLT].[SalesOrderHeader] CHECK CONSTRAINT [CK_SalesOrderHeader_TaxAmt]
 GO
 
-BULK INSERT [SalesLT].[Address] FROM 'C:\AdventureWorksLite\Address.csv'
+BULK INSERT [SalesLT].[Address] FROM 'Address.csv'
 WITH
 (
 	DATAFILETYPE = 'char',
@@ -772,7 +772,7 @@ WITH
 );
 GO
 
-BULK INSERT [SalesLT].[Customer] FROM 'C:\AdventureWorksLite\Customer.csv'
+BULK INSERT [SalesLT].[Customer] FROM 'Customer.csv'
 WITH
 (
 	DATAFILETYPE = 'char',
@@ -781,7 +781,7 @@ WITH
 );
 GO
 
-BULK INSERT [SalesLT].[CustomerAddress] FROM 'C:\AdventureWorksLite\CustomerAddress.csv'
+BULK INSERT [SalesLT].[CustomerAddress] FROM 'CustomerAddress.csv'
 WITH
 (
 	DATAFILETYPE = 'char',
@@ -790,7 +790,7 @@ WITH
 );
 GO
 
-BULK INSERT [SalesLT].[Product] FROM 'C:\AdventureWorksLite\Product.csv'
+BULK INSERT [SalesLT].[Product] FROM 'Product.csv'
 WITH
 (
 	DATAFILETYPE = 'char',
@@ -800,7 +800,7 @@ WITH
 );
 GO
 
-BULK INSERT [SalesLT].[ProductCategory] FROM 'C:\AdventureWorksLite\ProductCategory.csv'
+BULK INSERT [SalesLT].[ProductCategory] FROM 'ProductCategory.csv'
 WITH
 (
 	DATAFILETYPE = 'char',
@@ -809,7 +809,7 @@ WITH
 );
 GO
 
-BULK INSERT [SalesLT].[ProductDescription] FROM 'C:\AdventureWorksLite\ProductDescription.csv'
+BULK INSERT [SalesLT].[ProductDescription] FROM 'ProductDescription.csv'
 WITH
 (
 	CHECK_CONSTRAINTS,
@@ -822,7 +822,7 @@ WITH
 );
 GO
 
-BULK INSERT [SalesLT].[ProductModel] FROM 'C:\AdventureWorksLite\ProductModel.csv'
+BULK INSERT [SalesLT].[ProductModel] FROM 'ProductModel.csv'
 WITH
 (
 	CODEPAGE='ACP',
@@ -833,7 +833,7 @@ WITH
 );
 GO
 
-BULK INSERT [SalesLT].[ProductModelProductDescription] FROM 'C:\AdventureWorksLite\ProductModelProductDescription.csv'
+BULK INSERT [SalesLT].[ProductModelProductDescription] FROM 'ProductModelProductDescription.csv'
 WITH
 (
 	DATAFILETYPE = 'char',
@@ -842,7 +842,7 @@ WITH
 );
 GO
 
-BULK INSERT [SalesLT].[SalesOrderDetail] FROM 'C:\AdventureWorksLite\SalesOrderDetail.csv'
+BULK INSERT [SalesLT].[SalesOrderDetail] FROM 'SalesOrderDetail.csv'
 WITH
 (
 	DATAFILETYPE = 'char',
@@ -851,7 +851,7 @@ WITH
 );
 GO
 
-BULK INSERT [SalesLT].[SalesOrderHeader] FROM 'C:\AdventureWorksLite\SalesOrderHeader.csv'
+BULK INSERT [SalesLT].[SalesOrderHeader] FROM 'SalesOrderHeader.csv'
 WITH
 (
 	DATAFILETYPE = 'char',
